@@ -13,12 +13,20 @@ students = [
 "Norman Bates"
 ]
 
-#add then print them 
+def print_header
 puts "The students of Villains Academy"
 puts "_ _ _ _ _ _ _ _"
+end 
 
-students.each {|student|  puts student}
+def print(names)
+    names.each {|name| puts name}
+end
 
-# finally, we print the total number of students
-puts "Overall, we have #{students.count} great students"
-#it's important that print() dosen't add new line characters 
+def print_footer(names)
+puts "Overall, we have #{names.count} great students"
+end 
+
+print_header
+print(students)
+print_footer(students)
+
