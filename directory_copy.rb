@@ -1,26 +1,30 @@
-# Q:Our code only works with the student name and cohort. Add more information: hobbies, country of birth, height, etc.
+# Q:10 We've been using the chomp() method to get rid of the last return character. 
+# Find another method among those provided by the String class that could be used 
+# for the same purpose (although it will require passing some arguments).
+
+
+
 
 
 def input_students 
-    puts "Please enter students information"
-    puts "To finish, just hit return four times"
+    puts "Please enter the names of the students"
+    puts "To finish, just hit return twice"
+
     students = []
-    name = gets.chomp
-    hobbies = gets.chomp
-    country_of_birth = gets.chomp
-    height = gets.chomp
+    name = gets.chop 
+    # .chomp has been replaced with .chop a method provided by the string class 
+    #  that has the same function
 
     while !name.empty? do 
-        students << {name: name, hobbies: hobbies, country_of_birth: country_of_birth, height: height, cohort: :november}
+        students << {name: name, cohort: :november}
          puts "Now we have #{students.count} students"
-         name = gets.chomp
-         hobbies = gets.chomp
-         country_of_birth = gets.chomp
-         height = gets.chomp
+         name = gets.chop
     end 
      return students
 end
 
 input_students
+
+
 
 
