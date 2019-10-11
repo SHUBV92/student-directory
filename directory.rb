@@ -53,7 +53,7 @@ def input_students
 
 end 
 
-students = input_students
+students = input_studentsp
 # print_header
 print(students)
 # print_footer(students)
