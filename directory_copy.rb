@@ -1,9 +1,8 @@
-# We're using the each() method to iterate over an array of students. 
-# How can you modify the program to print a number before the name of each student, 
-# e.g. "1. Dr. Hannibal Lecter"? Hint: look into each_with_index()
+#Q2 :Modify your program to only print the students whose name begins with a 
+# specific letter.
 
 def input_students 
-    puts "Please enter the names of the students"
+    puts "Please enter the names of the students".center(20, " ")
     puts "To finish, just hit return twice"
 
     @students = []
@@ -11,15 +10,26 @@ def input_students
     while !name.empty? do 
         @students << {name: name, cohort: :november}
          puts "Now we have #{@students.count} students"
-         name = gets.chomp
+         name = gets.chop
     end 
-     return @students
+end
+
+def print_students
+    @students.each_with_index { |student, index| 
+    puts "#{index+1} #{student[:name]} (#{student[:cohort]} cohort)"}             
 end
 
 
-def print_students
-@students.each_with_index { |student, index| 
-puts "#{index+1} #{student[:name]} (#{student[:cohort]} cohort)"}              
+def sorted_by_alphabet
+  index = 1
+    @students.each {|x| if x[:name].start_with? ("a") 
+    puts "#{index}. #{x[:name]} (#{x[:cohort]} cohort)"
+  index += 1
     end
+    }
+    return @students
+end
+
 input_students
-print_students
+# print_students
+sorted_by_alphabet
