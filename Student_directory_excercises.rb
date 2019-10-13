@@ -3,19 +3,19 @@ def input_students
   puts "To finish, just hit return four times".center(20, " ")
 
   @students = []
-  name = gets.chomp
-  hobbies = gets.chomp
-  country_of_birth = gets.chomp
-  height = gets.chomp
+  name = gets.strip
+  hobbies = gets.strip
+  country_of_birth = gets.strip
+  height = gets.strip
   
   while !name.empty? do 
     @students << {name: name, hobbies: hobbies, country_of_birth: country_of_birth, 
     height: height, cohort: :november}
     puts "Now we have #{@students.count} students".center(20, " ")
-    name = gets.chomp
-    hobbies = gets.chomp
-    country_of_birth = gets.chomp
-    height = gets.chomp
+    name = gets.strip
+    hobbies = gets.strip
+    country_of_birth = gets.strip
+    height = gets.strip
   end 
     return @students
 end
@@ -33,6 +33,6 @@ def sorted_by_alphabet
 end
   
   input_students
-  # print_students
+  print_students
   sorted_by_alphabet
 
