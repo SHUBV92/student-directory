@@ -7,6 +7,8 @@ def input_students
   hobbies = gets.strip
   country_of_birth = gets.strip
   height = gets.strip
+  cohort = gets.strip
+
   
   while !name.empty? do 
     @students << {name: name, hobbies: hobbies, country_of_birth: country_of_birth, 
@@ -22,6 +24,7 @@ def input_students
     hobbies = gets.strip
     country_of_birth = gets.strip
     height = gets.strip
+    cohort = gets.strip
   end 
     return @students
 end
