@@ -1,19 +1,28 @@
 def input_students 
-  puts "Please enter the names of the students"
-  puts "To finish, just hit return twice"
+  puts "Please enter students information"
+  puts "To finish, just hit return four times"
+
   @students = []
   name = gets.chomp
+  hobbies = gets.chomp
+  country_of_birth = gets.chomp
+  height = gets.chomp
+  
   while !name.empty? do 
-    @students << {name: name, cohort: :november}
+    @students << {name: name, hobbies: hobbies, country_of_birth: country_of_birth, 
+    height: height, cohort: :november}
     puts "Now we have #{@students.count} students"
     name = gets.chomp
+    hobbies = gets.chomp
+    country_of_birth = gets.chomp
+    height = gets.chomp
   end 
     return @students
 end
 
 def print_students
   @students.each_with_index { |student, index| 
-  puts "#{index+1} #{student[:name]} (#{student[:cohort]} cohort)"}              
+  puts "#{index+1} #{student[:name]} #{student[:hobbies]} #{student[:country_of_birth]} #{student[:height]} (#{student[:cohort]} cohort)"}              
 end
 
 def sorted_by_alphabet
