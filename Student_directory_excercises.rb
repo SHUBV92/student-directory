@@ -18,12 +18,12 @@ end
 
 def sorted_by_alphabet
   index = 1
-      @students.each {|x| if x[:name].start_with? ("a") && x[:cohort] == "november".to_sym 
-      puts "#{index}. #{x[:name]} (#{x[:cohort]} cohort)"
-  index += 1
-      end
-      }
-  end
+  @students.each {|x| if x[:name].start_with? ("a") && x[:cohort] == "november".to_sym && x[:name].length <= 12
+  puts "#{index}. #{x[:name]} (#{x[:cohort]} cohort)"
+  index += 1}
+end
+  
+  input_students
+  # print_students
+  sorted_by_alphabet
 
-input_students
-print_student
