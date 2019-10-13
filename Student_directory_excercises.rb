@@ -43,7 +43,7 @@ def print_students
           @students_by_cohort[c] = []
       end
   
-      @students_by_cohort[c].push(n)
+      @students_by_cohort[c].push(n) 
   end 
   puts @students_by_cohort.to_a
   end 
