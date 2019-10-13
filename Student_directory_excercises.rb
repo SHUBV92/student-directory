@@ -20,11 +20,25 @@ def input_students
     return @students
 end
 
+students_by_cohort = {}
+
 def print_students
   @students.each_with_index { |student, index| 
   puts "#{index+1} #{student[:name]} #{student[:hobbies]} #{student[:country_of_birth]} #{student[:height]} (#{student[:cohort]} cohort)"}.center(20, " ")              
-end
 
+  @students.each do |x|
+      c = x[:cohort]
+      n = x[:name]
+  
+      if @students_by_cohort[c] == nil
+          @students_by_cohort[c] = []
+      end
+  
+      @students_by_cohort[c].push(n)
+  end 
+  puts @students_by_cohort.to_a
+  end 
+  
 def sorted_by_alphabet
   index = 1
   @students.each {|x| if x[:name].start_with? ("a") && x[:cohort] == "november".to_sym && x[:name].length <= 12
