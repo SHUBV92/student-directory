@@ -21,10 +21,13 @@ def process(selection)
   case selection 
     when "1"
       input_students 
+      puts "students added"
     when "2"
       show_students
+      puts "Display"
     when "3"
       save_students
+      puts "students have been saved"
     when "9"
       exit 
     else 
