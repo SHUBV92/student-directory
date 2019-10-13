@@ -16,5 +16,14 @@ def print_students
   puts "#{index+1} #{student[:name]} (#{student[:cohort]} cohort)"}              
 end
 
+def sorted_by_alphabet
+  index = 1
+      @students.each {|x| if x[:name].start_with? ("a") && x[:cohort] == "november".to_sym 
+      puts "#{index}. #{x[:name]} (#{x[:cohort]} cohort)"
+  index += 1
+      end
+      }
+  end
+
 input_students
 print_student
