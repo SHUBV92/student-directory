@@ -10,15 +10,20 @@ def input_students
   cohort = gets.strip
 
   
-  while !name.empty? do 
+  while true do 
+    if !name.empty? 
     @students << {name: name, hobbies: hobbies, country_of_birth: country_of_birth, 
     height: height, cohort: :november}
 
+    else name == name.empty?
+      puts students
+    end
     if students.count == 1
       puts "Now we have #{students.count} student".center(20, " ")
     else   
       puts "Now we have #{students.count} students".center(20, " ")  
     end   
+    
 
     name = gets.strip
     hobbies = gets.strip
