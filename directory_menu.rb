@@ -96,6 +96,12 @@ end
 def try_load_students 
   # below is the first argument from the command line 
   filename = ARGV.first  
+  if ARGV.first 
+    filename = ARGV.first 
+  else 
+    filename = "students.csv"
+  end
+  
   return if filename.nil?
     # if it exists 
   if File.exists?(filename) 
@@ -106,6 +112,7 @@ def try_load_students
     puts "Sorry, #{filename} dosen't exist."
     # quit the program
     exit 
+  end
   end 
 end 
 
