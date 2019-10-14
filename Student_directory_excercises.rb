@@ -24,7 +24,6 @@ def input_students
       puts "Now we have #{students.count} students".center(20, " ")  
     end   
     
-
     name = gets.strip
     hobbies = gets.strip
     country_of_birth = gets.strip
@@ -35,6 +34,11 @@ def input_students
 end
 
 students_by_cohort = {}
+
+def print_header
+  puts "The students of Villains Academy"
+  puts "_ _ _ _ _ _ _ _"
+end 
 
 def print_students
   @students.each_with_index { |student, index| 
@@ -53,6 +57,11 @@ def print_students
   puts @students_by_cohort.to_a
   end 
   
+
+  def print_footer (students)
+    puts "Overall, we have #{students.count} great students"
+  end
+
 def sorted_by_alphabet
   index = 1
   @students.each {|x| if x[:name].start_with? ("a") && x[:cohort] == "november".to_sym && x[:name].length <= 12
@@ -61,6 +70,8 @@ def sorted_by_alphabet
 end
   
   input_students
+  print_header
   print_students
   sorted_by_alphabet
+  print_footer
 
